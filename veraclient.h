@@ -6,11 +6,11 @@
 class VeraClient : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString veraRequest READ veraRequest WRITE setVeraRequest NOTIFY veraRequestChanged FINAL)
+    Q_PROPERTY(QString veraRequest READ getVeraRequest WRITE setVeraRequest NOTIFY veraRequestChanged FINAL)
 
 public:
     explicit VeraClient(QObject *parent = nullptr);
-    QString veraRequest();
+    Q_INVOKABLE QString getVeraRequest();
 
 signals:
     void veraRequestChanged();

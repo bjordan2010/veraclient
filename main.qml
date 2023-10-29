@@ -14,6 +14,13 @@ Window {
         id: veraClient
     }
 
+    Connections {
+        target: veraClient
+        function onVeraRequestChanged() {
+            showVeraRequest.text = veraClient.getVeraRequest()
+        }
+    }
+
     Button {
         id: startButton
         width: 110
@@ -76,7 +83,7 @@ Window {
         height: 75
         color: "#aaaaaa"
         font.pointSize: 12
-        text: veraClient.veraRequest
+        text: veraClient.getVeraRequest()
         anchors.verticalCenter: veraTaskBorder.verticalCenter
         wrapMode: Text.WordWrap
         font.bold: true

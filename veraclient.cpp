@@ -4,10 +4,10 @@
 
 VeraClient::VeraClient(QObject *parent) : QObject{parent}, m_veraRequest("Hello, what can I do for you?") {}
 
-QString VeraClient::veraRequest()
-{
-    return m_veraRequest;
-}
+//QString VeraClient::veraRequest()
+//{
+//    return m_veraRequest;
+//}
 
 void VeraClient::setVeraRequest(QString newRequest)
 {
@@ -17,6 +17,11 @@ void VeraClient::setVeraRequest(QString newRequest)
         fetchFromService();
         emit veraRequestChanged();
     }
+}
+
+QString VeraClient::getVeraRequest()
+{
+    return m_veraRequest;
 }
 
 void VeraClient::fetchFromService()
